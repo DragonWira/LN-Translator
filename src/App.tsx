@@ -229,7 +229,7 @@ export default function App() {
           <div className="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center">
             <BookOpen size={15} className="text-emerald-400" />
           </div>
-          <span className="font-semibold text-sm text-white tracking-tight">EPUB Groq Translator</span>
+          <span className="font-semibold text-sm text-white tracking-tight">EPUB Novel Translator</span>
           <span className="hidden sm:inline text-[10px] text-gray-600 border border-gray-800 rounded px-1.5 py-0.5 font-mono">JP → ID</span>
         </div>
         <div className="flex-1" />
