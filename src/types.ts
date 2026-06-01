@@ -33,8 +33,8 @@ export interface EpubData {
 
 export const GROQ_MODELS = [
   { id: 'llama-3.3-70b-versatile', label: 'Llama 3.3 70B Versatile (Default · 128k ctx)' },
-  { id: 'llama-3.1-70b-versatile', label: 'Llama 3.1 70B Versatile (128k ctx)' },
-  { id: 'mixtral-8x7b-32768', label: 'Mixtral 8x7B (32k ctx)' },
+  { id: 'llama-3.1-8b-instant', label: 'llama-3.1-8b-instant' },
+  { id: 'openai/gpt-oss-20b', label: 'openai/gpt-oss-20b' },
 ];
 
 export const DEFAULT_SYSTEM_PROMPT = `You are a professional light novel localizer translating Japanese fiction to natural, engaging Indonesian.
