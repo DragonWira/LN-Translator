@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ] # Sesuaikan ke 'master' jika branch utama lu bukan main
+    branches: [ "main" ] # Sesuai dengan branch 'main' di repo lu
 
 permissions:
   contents: read
@@ -25,15 +25,23 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 20.x
+        cache: 'npm'
 
-    - name: Install and Build Project
-      run: |
-        # 1. Wajib masuk ke folder project tempat package.json berada
-        cd project
-        
-        # 2. Install semua library-nya
-        npm install
-        
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build with Vite
+      # Ditambahkan flag base agar aset aplikasi lu mengarah ke /LN-Translator/ dan tidak blank putih
+      run: npx vite build --base=/LN-Translator/
+
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist # Langsung ambil folder dist dari root
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
         # 3. Paksa Vite build pake base path nama repo lu biar gak blank putih lagi
         npx vite build --base=/LN-Translator/
 
