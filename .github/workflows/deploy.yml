@@ -42,27 +42,3 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-        # 3. Paksa Vite build pake base path nama repo lu biar gak blank putih lagi
-        npx vite build --base=/LN-Translator/
-
-    - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        # Kita arahkan ke folder dist yang ada di dalam folder project
-        path: ./project/dist
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-      run: |
-        # Kita ganti npx webpack milik lu menjadi perintah build bawaan Vite
-        npm run build
-
-    - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./dist # Folder hasil build utama Vite
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
