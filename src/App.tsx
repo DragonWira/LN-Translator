@@ -235,7 +235,7 @@ export default function App() {
         <div className="flex-1" />
         <div className="flex items-center gap-2 text-[11px] text-gray-600">
           <Zap size={11} className="text-emerald-500" />
-          <span>Powered by Groq Cloud</span>
+          <span>©DragonWira</span>
         </div>
         <button
           onClick={() => setSidebarOpen(v => !v)}
